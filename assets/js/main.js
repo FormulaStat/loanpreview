@@ -58,3 +58,20 @@ if (existingLoanRadios) {
     });
   });
 }
+
+
+// FAQ accordion toggle
+document.querySelectorAll(".faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+    const faqAnswer = button.nextElementSibling;
+    faqAnswer.classList.toggle("open");
+
+    // Toggle + and -
+    const span = button.querySelector("span");
+    if (faqAnswer.classList.contains("open")) {
+      span.textContent = "−";
+    } else {
+      span.textContent = "+";
+    }
+  });
+});

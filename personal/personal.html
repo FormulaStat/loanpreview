@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Loan Application | GlobalStoxfx</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/personal.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">GlobalStoxfx</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../terms/terms.html">Terms</a></li>
+        <li><a href="personal.html" class="active">Personal Loan</a></li>
+        <li><a href="../business/business.html">Business Loan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <h1>Personal Loan Application</h1>
+    <p class="note">Please read the <a href="../terms/terms.html">Terms &amp; Conditions</a> before applying.</p>
+
+    <form id="personalLoanForm">
+      <!-- Loan Details -->
+      <fieldset>
+        <legend>Loan Details</legend>
+        <label for="loanAmount">Loan Amount Requested ($):</label>
+        <input type="number" id="loanAmount" name="loanAmount" required min="5000" max="100000" />
+
+        <label for="loanTenure">Preferred Loan Tenure:</label>
+        <select id="loanTenure" name="loanTenure" required>
+          <option value="">--Select--</option>
+          <option value="3">3 months</option>
+          <option value="6">6 months</option>
+          <option value="12">12 months</option>
+          <option value="24">24 months</option>
+          <option value="other">Other</option>
+        </select>
+      </fieldset>
+
+      <!-- Financial Info -->
+      <fieldset>
+        <legend>Financial Information</legend>
+        <label for="income">Monthly Income ($):</label>
+        <input type="number" id="income" name="income" required />
+
+        <label for="expenses">Monthly Expenses ($):</label>
+        <input type="number" id="expenses" name="expenses" required />
+
+        <label for="debts">Existing Loans/Debts:</label>
+        <select id="debts" name="debts">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+
+        <div id="debtDetails" style="display:none;">
+          <label for="outstanding">Outstanding Balance ($):</label>
+          <input type="number" id="outstanding" name="outstanding" />
+        </div>
+      </fieldset>
+
+      <!-- Declarations -->
+      <fieldset>
+        <legend>Declarations</legend>
+        <label>
+          <input type="checkbox" id="confirmInfo" required />
+          I confirm that the above information is correct.
+        </label>
+        <label>
+          <input type="checkbox" id="authorize" required />
+          I authorize the platform to verify my financial information.
+        </label>
+      </fieldset>
+
+      <button type="submit" class="btn">Submit Application</button>
+      <a href="../index.html" class="btn btn-alt">Cancel</a>
+    </form>
+
+    <!-- Loader/Result -->
+    <div id="formResult" class="hidden"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 GlobalStoxfx. All rights reserved.</p>
+  </footer>
+
+  <script src="../assets/js/personal.js"></script>
+</body>
+</html>

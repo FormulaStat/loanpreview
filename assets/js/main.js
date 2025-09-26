@@ -40,3 +40,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// 🌐 Show/Hide Existing Loan Details
+const existingLoanRadios = document.querySelectorAll('input[name="existingLoan"]');
+const loanDetailsSection = document.getElementById("existing-loan-details");
+
+if (existingLoanRadios) {
+  existingLoanRadios.forEach(radio => {
+    radio.addEventListener("change", () => {
+      if (radio.value === "yes") {
+        loanDetailsSection.style.display = "block";
+      } else {
+        loanDetailsSection.style.display = "none";
+        // Clear inputs when hidden
+        loanDetailsSection.querySelectorAll("input").forEach(input => input.value = "");
+      }
+    });
+  });
+}

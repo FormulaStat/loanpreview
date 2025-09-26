@@ -87,15 +87,31 @@
             <input type="number" id="revenue" name="revenue" required placeholder="Enter revenue (in USD)" />
           </div>
 
-          <!-- Existing Loans -->
-          <div class="form-group">
-            <label>📌 Existing Business Loans/Debts</label>
-            <div class="radio-group">
-              <label><input type="radio" name="bizdebt" value="Yes" required /> Yes</label>
-              <label><input type="radio" name="bizdebt" value="No" required /> No</label>
-            </div>
-          </div>
+          <!-- Existing Loans/Debts -->
+<div class="form-group">
+  <label>Existing Business Loans/Debts:</label>
+  <label><input type="radio" name="existingLoan" value="yes" required /> Yes</label>
+  <label><input type="radio" name="existingLoan" value="no" required /> No</label>
+</div>
 
+<!-- Conditional Fields (Hidden by default) -->
+<div id="existing-loan-details" style="display: none; margin-top: 1rem;">
+  <div class="form-group">
+    <label for="outstandingBalance">Outstanding Balance ($):</label>
+    <input type="number" id="outstandingBalance" name="outstandingBalance" placeholder="e.g. 5,000" />
+  </div>
+
+  <div class="form-group">
+    <label for="loanStartDate">Loan Start Date:</label>
+    <input type="date" id="loanStartDate" name="loanStartDate" />
+  </div>
+
+  <div class="form-group">
+    <label for="loanEndDate">Loan End Date:</label>
+    <input type="date" id="loanEndDate" name="loanEndDate" />
+  </div>
+</div>
+          
           <!-- Declaration -->
           <div class="form-group checkbox">
             <label>

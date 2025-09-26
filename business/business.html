@@ -3,117 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Business Loan Application | GlobalStoxfx</title>
+  <title>Business Loan - GlobalStoxfx</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="stylesheet" href="../assets/css/business.css" />
+  <link rel="stylesheet" href="../assets/css/form.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ✅ Sticky Navbar -->
-<header class="navbar">
-  <div class="container nav-content">
-    <a href="index.html" class="logo">GlobalStoxfx</a>
-    <nav id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="personal.html">Personal Loan</a>
-      <a href="business.html">Business Loan</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="nav-toggle" id="nav-toggle">☰</button>
-  </div>
-</header>
-
-  <main class="form-container">
-    <h1>Business Loan Application</h1>
-    <p class="note">Please read the <a href="../terms/terms.html">Terms &amp; Conditions</a> before applying.</p>
-
-    <form id="businessLoanForm">
-      <!-- Loan Details -->
-      <fieldset>
-        <legend>Loan Details</legend>
-        <label for="loanAmount">Loan Amount Requested ($):</label>
-        <input type="number" id="loanAmount" name="loanAmount" required min="100000" max="1000000000" />
-
-        <label for="loanTenure">Preferred Loan Tenure:</label>
-        <select id="loanTenure" name="loanTenure" required>
-          <option value="">--Select--</option>
-          <option value="3">3 months</option>
-          <option value="6">6 months</option>
-          <option value="12">12 months</option>
-          <option value="24">24 months</option>
-          <option value="other">Other</option>
-        </select>
-      </fieldset>
-
-      <!-- Business Purpose -->
-      <fieldset>
-        <legend>Business Purpose</legend>
-        <label for="purpose">Purpose of Loan:</label>
-        <textarea id="purpose" name="purpose" rows="3" required></textarea>
-      </fieldset>
-
-      <!-- Financial Info -->
-      <fieldset>
-        <legend>Financial Information</legend>
-        <label for="income">Monthly Income ($):</label>
-        <input type="number" id="income" name="income" required />
-
-        <label for="expenses">Monthly Expenses ($):</label>
-        <input type="number" id="expenses" name="expenses" required />
-
-        <label for="debts">Existing Loans/Debts:</label>
-        <select id="debts" name="debts">
-          <option value="no">No</option>
-          <option value="yes">Yes</option>
-        </select>
-
-        <div id="debtDetails" style="display:none;">
-          <label for="outstanding">Outstanding Balance ($):</label>
-          <input type="number" id="outstanding" name="outstanding" />
-        </div>
-
-        <label for="value">Estimated Business Value ($):</label>
-        <input type="number" id="value" name="value" required />
-      </fieldset>
-
-      <!-- Declarations -->
-      <fieldset>
-        <legend>Declarations</legend>
-        <label>
-          <input type="checkbox" id="confirmInfo" required />
-          I confirm that the above information is correct.
-        </label>
-        <label>
-          <input type="checkbox" id="authorize" required />
-          I authorize the platform to verify my financial information.
-        </label>
-      </fieldset>
-
-      <button type="submit" class="btn">Submit Application</button>
-      <a href="../index.html" class="btn btn-alt">Cancel</a>
-    </form>
-
-    <!-- Loader/Result -->
-    <div id="formResult" class="hidden"></div>
-  </main>
-
-  <!-- ✅ Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-links">
-      <a href="index.html">Home</a> |
-      <a href="personal.html">Personal Loan</a> |
-      <a href="business.html">Business Loan</a> |
-      <a href="#faq">FAQ</a> |
-      <a href="#contact">Contact</a>
+  <!-- 🌐 Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="../index.html">💳 GlobalStoxfx</a>
+      </div>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../personal/personal.html">Personal Loan</a></li>
+          <li><a href="business.html" class="active">Business Loan</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle">☰</button>
+      </nav>
     </div>
-    <p>© 2025 GlobalStoxfx. All Rights Reserved.</p>
-    <p>Email: support@globalstoxfx.com | Phone: +1-800-000-0000</p>
-  </div>
-</footer>
+  </header>
 
-  <script src="assets/js/nav.js"></script>
-  <script src="../assets/js/business.js"></script>
+  <!-- 🎯 Business Loan Form -->
+  <section class="form-section">
+    <div class="container">
+      <div class="form-card">
+        <h2>Business Loan Application</h2>
+        <p>Provide your business details to apply for funding.</p>
+
+        <form class="loan-form">
+          <!-- Company Name -->
+          <div class="form-group">
+            <label for="company">🏢 Business / Company Name</label>
+            <input type="text" id="company" name="company" required placeholder="Enter company name" />
+          </div>
+
+          <!-- Registration Number -->
+          <div class="form-group">
+            <label for="reg">📑 Business Registration Number</label>
+            <input type="text" id="reg" name="reg" required placeholder="Enter registration number" />
+          </div>
+
+          <!-- Industry -->
+          <div class="form-group">
+            <label for="industry">⚙️ Industry / Sector</label>
+            <input type="text" id="industry" name="industry" required placeholder="e.g. Technology, Retail, Finance" />
+          </div>
+
+          <!-- Loan Amount -->
+          <div class="form-group">
+            <label for="amount">💰 Loan Amount Requested</label>
+            <input type="number" id="amount" name="amount" required placeholder="Enter loan amount" />
+          </div>
+
+          <!-- Tenure -->
+          <div class="form-group">
+            <label for="tenure">📅 Preferred Loan Tenure</label>
+            <select id="tenure" name="tenure" required>
+              <option value="">Select tenure</option>
+              <option>6 months</option>
+              <option>12 months</option>
+              <option>24 months</option>
+              <option>36 months</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Employees -->
+          <div class="form-group">
+            <label for="employees">👥 Number of Employees</label>
+            <input type="number" id="employees" name="employees" required placeholder="e.g. 25" />
+          </div>
+
+          <!-- Annual Revenue -->
+          <div class="form-group">
+            <label for="revenue">📊 Annual Revenue</label>
+            <input type="number" id="revenue" name="revenue" required placeholder="Enter revenue (in USD)" />
+          </div>
+
+          <!-- Existing Loans -->
+          <div class="form-group">
+            <label>📌 Existing Business Loans/Debts</label>
+            <div class="radio-group">
+              <label><input type="radio" name="bizdebt" value="Yes" required /> Yes</label>
+              <label><input type="radio" name="bizdebt" value="No" required /> No</label>
+            </div>
+          </div>
+
+          <!-- Declaration -->
+          <div class="form-group checkbox">
+            <label>
+              <input type="checkbox" required />
+              I confirm that the business information provided is accurate and authorize verification.
+            </label>
+          </div>
+
+          <!-- Terms & Conditions -->
+<div class="form-group checkbox">
+  <label>
+    <input type="checkbox" required />
+    I have read and agree to the 
+    <a href="../terms.html" target="_blank">Terms & Conditions</a>.
+  </label>
+</div>
+
+          <button type="submit" class="btn btn-primary">Submit Application</button>
+          <p class="secure-text">🔒 Secure & Encrypted Application</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚖️ Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>© 2025 GlobalStoxfx. All rights reserved.</p>
+      <p><small>GlobalStoxfx is committed to compliance with lending regulations.</small></p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

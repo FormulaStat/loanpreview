@@ -1,3 +1,16 @@
+/* Terms & Conditions Link */
+.terms-link {
+  color: #0056b3;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.terms-link:hover {
+  color: #002B5B;
+  text-decoration: none;
+}
+
 /* Back to Application Buttons */
 .back-btn {
   margin-top: 2rem;

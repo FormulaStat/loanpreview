@@ -1,0 +1,40 @@
+.terms-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.terms-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.terms-text {
+  line-height: 1.6;
+  color: #333;
+}
+
+.terms-text ol {
+  margin-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.terms-text li {
+  margin-bottom: 1rem;
+}
+
+.terms-actions {
+  text-align: center;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.terms-actions .btn {
+  /* reuse btn styles from global CSS */
+}
+
+.terms-actions .btn-alt {
+  /* reuse btn-alt */
+}

@@ -1,132 +1,208 @@
-/* General Reset */
+/* 🌐 Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
+
 body {
-  background: #f5f6fa;
+  font-family: 'Poppins', sans-serif;
   color: #333;
+  background: #F5F6FA;
   line-height: 1.6;
 }
 
-/* Navbar */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* 🌐 Navbar */
 .navbar {
+  background: #002B5B;
+  color: #fff;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
-  width: 100%;
-  background: #002b5b;
-  color: white;
-  padding: 0.8rem 2rem;
   z-index: 1000;
 }
-.nav-content {
+
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.navbar a {
-  color: white;
-  margin: 0 1rem;
-  text-decoration: none;
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FFD700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: #fff;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
-.navbar a:hover,
-.navbar a.active {
-  color: #ffd700;
+
+.nav-links li a:hover {
+  color: #FFD700;
 }
+
+/* Mobile nav toggle */
 .nav-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
-  color: white;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
 }
+
+/* 🎯 Hero Section */
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 43, 91, 0.7);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons .btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  margin: 0 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #FFD700;
+  color: #002B5B;
+}
+
+.btn-primary:hover {
+  background: #e6c200;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid #FFD700;
+  color: #FFD700;
+}
+
+.btn-secondary:hover {
+  background: #FFD700;
+  color: #002B5B;
+}
+
+/* 📖 FAQ + Contact */
+.faq-section,
+.contact-section {
+  padding: 4rem 0;
+  background: #fff;
+  margin-top: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.faq-section h2,
+.contact-section h2 {
+  text-align: center;
+  color: #002B5B;
+  margin-bottom: 1rem;
+}
+
+/* ⚖️ Footer */
+.footer {
+  background: #002B5B;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.footer small {
+  display: block;
+  margin-top: 0.5rem;
+  color: #FFD700;
+  font-size: 0.9rem;
+}
+
+/* 📱 Responsive */
 @media (max-width: 768px) {
-  #nav-links {
+  .nav-links {
     display: none;
     flex-direction: column;
-    background: #002b5b;
+    background: #002B5B;
     position: absolute;
-    top: 60px;
-    right: 20px;
+    top: 100%;
+    right: 0;
+    width: 200px;
     padding: 1rem;
-    border-radius: 8px;
   }
-  #nav-links.active {
+
+  .nav-links.active {
     display: flex;
   }
+
   .nav-toggle {
     display: block;
   }
-}
 
-/* Hero */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/finance-bg.jpg') no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  padding: 5rem 1rem;
-}
-.hero h1 {
-  font-size: 2.5rem;
-}
-.hero p {
-  margin: 1rem 0;
-}
-.cta-buttons {
-  margin-top: 2rem;
-}
-.btn {
-  background: #ffd700;
-  color: #002b5b;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 0.5rem;
-}
-.btn-secondary {
-  background: white;
-  color: #002b5b;
-}
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-/* Forms */
-.form-section {
-  padding: 3rem 1rem;
-}
-.loan-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-.loan-form label {
-  margin: 1rem 0 0.3rem;
-}
-.loan-form input,
-.loan-form select {
-  padding: 0.6rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-.checkbox {
-  margin: 1rem 0;
-}
-.loan-form button {
-  margin-top: 1rem;
-}
+  .hero p {
+    font-size: 1rem;
+  }
 
-/* Footer */
-.footer {
-  background: #002b5b;
-  color: white;
-  text-align: center;
-  padding: 2rem;
-  margin-top: 3rem;
-}
-.footer a {
-  color: #ffd700;
-  text-decoration: none;
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    margin: 0.5rem 0;
+  }
 }

@@ -3,107 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Loan Application | GlobalStoxfx</title>
+  <title>Personal Loan - GlobalStoxfx</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.jpg" />
   <link rel="stylesheet" href="../assets/css/style.css" />
-  <link rel="stylesheet" href="../assets/css/personal.css" />
+  <link rel="stylesheet" href="../assets/css/form.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ✅ Sticky Navbar -->
-<header class="navbar">
-  <div class="container nav-content">
-    <a href="index.html" class="logo">GlobalStoxfx</a>
-    <nav id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="personal.html">Personal Loan</a>
-      <a href="business.html">Business Loan</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="nav-toggle" id="nav-toggle">☰</button>
-  </div>
-</header>
-
-  <main class="form-container">
-    <h1>Personal Loan Application</h1>
-    <p class="note">Please read the <a href="../terms/terms.html">Terms &amp; Conditions</a> before applying.</p>
-
-    <form id="personalLoanForm">
-      <!-- Loan Details -->
-      <fieldset>
-        <legend>Loan Details</legend>
-        <label for="loanAmount">Loan Amount Requested ($):</label>
-        <input type="number" id="loanAmount" name="loanAmount" required min="5000" max="100000" />
-
-        <label for="loanTenure">Preferred Loan Tenure:</label>
-        <select id="loanTenure" name="loanTenure" required>
-          <option value="">--Select--</option>
-          <option value="3">3 months</option>
-          <option value="6">6 months</option>
-          <option value="12">12 months</option>
-          <option value="24">24 months</option>
-          <option value="other">Other</option>
-        </select>
-      </fieldset>
-
-      <!-- Financial Info -->
-      <fieldset>
-        <legend>Financial Information</legend>
-        <label for="income">Monthly Income ($):</label>
-        <input type="number" id="income" name="income" required />
-
-        <label for="expenses">Monthly Expenses ($):</label>
-        <input type="number" id="expenses" name="expenses" required />
-
-        <label for="debts">Existing Loans/Debts:</label>
-        <select id="debts" name="debts">
-          <option value="no">No</option>
-          <option value="yes">Yes</option>
-        </select>
-
-        <div id="debtDetails" style="display:none;">
-          <label for="outstanding">Outstanding Balance ($):</label>
-          <input type="number" id="outstanding" name="outstanding" />
-        </div>
-      </fieldset>
-
-      <!-- Declarations -->
-      <fieldset>
-        <legend>Declarations</legend>
-        <label>
-          <input type="checkbox" id="confirmInfo" required />
-          I confirm that the above information is correct.
-        </label>
-        <label>
-          <input type="checkbox" id="authorize" required />
-          I authorize the platform to verify my financial information.
-        </label>
-      </fieldset>
-
-      <button type="submit" class="btn">Submit Application</button>
-      <a href="../index.html" class="btn btn-alt">Cancel</a>
-    </form>
-
-    <!-- Loader/Result -->
-    <div id="formResult" class="hidden"></div>
-  </main>
-
-  <!-- ✅ Footer -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-links">
-      <a href="index.html">Home</a> |
-      <a href="personal.html">Personal Loan</a> |
-      <a href="business.html">Business Loan</a> |
-      <a href="#faq">FAQ</a> |
-      <a href="#contact">Contact</a>
+  <!-- 🌐 Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="../index.html">💳 GlobalStoxfx</a>
+      </div>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="personal.html" class="active">Personal Loan</a></li>
+          <li><a href="../business/business.html">Business Loan</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle">☰</button>
+      </nav>
     </div>
-    <p>© 2025 GlobalStoxfx. All Rights Reserved.</p>
-    <p>Email: support@globalstoxfx.com | Phone: +1-800-000-0000</p>
-  </div>
-</footer>
+  </header>
 
-  <script src="assets/js/nav.js"></script>
-  <script src="../assets/js/personal.js"></script>
+  <!-- 🎯 Personal Loan Form -->
+  <section class="form-section">
+    <div class="container">
+      <div class="form-card">
+        <h2>Personal Loan Application</h2>
+        <p>Fill in the details below to apply for a personal loan.</p>
+
+        <form class="loan-form">
+          <!-- Loan Amount -->
+          <div class="form-group">
+            <label for="amount">💰 Loan Amount Requested</label>
+            <input type="number" id="amount" name="amount" required placeholder="Enter loan amount" />
+          </div>
+
+          <!-- Tenure -->
+          <div class="form-group">
+            <label for="tenure">📅 Preferred Loan Tenure</label>
+            <select id="tenure" name="tenure" required>
+              <option value="">Select tenure</option>
+              <option>3 months</option>
+              <option>6 months</option>
+              <option>12 months</option>
+              <option>24 months</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Repayment -->
+          <div class="form-group">
+            <label for="repayment">🏦 Preferred Repayment Method</label>
+            <select id="repayment" name="repayment" required>
+              <option value="">Select method</option>
+              <option>Bank Transfer</option>
+              <option>Direct Debit</option>
+              <option>Mobile Payment</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Income -->
+          <div class="form-group">
+            <label for="income">💼 Monthly Income</label>
+            <input type="number" id="income" name="income" required placeholder="Enter monthly income" />
+          </div>
+
+          <!-- Expenses -->
+          <div class="form-group">
+            <label for="expenses">📊 Monthly Expenses</label>
+            <input type="number" id="expenses" name="expenses" required placeholder="Enter monthly expenses" />
+          </div>
+
+          <!-- Existing Loan -->
+          <div class="form-group">
+            <label>📌 Existing Loans/Debts</label>
+            <div class="radio-group">
+              <label><input type="radio" name="debt" value="Yes" required /> Yes</label>
+              <label><input type="radio" name="debt" value="No" required /> No</label>
+            </div>
+          </div>
+
+          <!-- Declaration -->
+          <div class="form-group checkbox">
+            <label>
+              <input type="checkbox" required />
+              I confirm that the information provided is correct and authorize verification.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit Application</button>
+          <p class="secure-text">🔒 Secure & Encrypted Application</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚖️ Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>© 2025 GlobalStoxfx. All rights reserved.</p>
+      <p><small>GlobalStoxfx is committed to compliance with lending regulations.</small></p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

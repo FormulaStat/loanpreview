@@ -206,3 +206,9 @@ a {
     margin: 0.5rem 0;
   }
 }
+
+/* Sticky nav scroll shadow */
+.navbar.scrolled {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
